@@ -1,0 +1,5 @@
+packages/*
+ReactiveUI.Helpers/bin/*
+ReactiveUI.Helpers/obj/*
+ReactiveUI.Helpers.Tests/bin/*
+ReactiveUI.Helpers.Tests/obj/*
