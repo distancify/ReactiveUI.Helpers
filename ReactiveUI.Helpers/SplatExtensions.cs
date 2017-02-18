@@ -133,6 +133,19 @@ namespace ReactiveUI.Helpers
             resolver.RegisterLazySingleton(typeof(TImplementation), typeof(TImplementation), contract);
         }
 
+        /// <summary>
+        /// Registers <typeparamref name="TView"/> as a view for <typeparamref name="TViewModel"/> 
+        /// </summary>
+        /// <typeparam name="TView">The type of the view</typeparam>
+        /// <typeparam name="TViewModel">The type of the view model</typeparam>
+        /// <param name="resolver">The <see cref="IMutableDependencyResolver"/> to register the service to.</param>
+        public static void RegisterViewForViewModel<TView, TViewModel>(this IMutableDependencyResolver resolver)
+            where TView : IViewFor where TViewModel : class, IRoutableViewModel
+        {
+            resolver.Register(typeof(TViewModel));
+            resolver.Register(typeof(TView), typeof(IViewFor<TViewModel>));
+        }
+
         private static ClassInstanceFactory GetClassInstanceFactory(IMutableDependencyResolver resolver, Type implementer, string contract = null)
         {
             var result = new ClassInstanceFactory();

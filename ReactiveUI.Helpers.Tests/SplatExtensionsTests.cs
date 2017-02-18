@@ -180,6 +180,20 @@ namespace ReactiveUI.Helpers.Tests
 
             Assert.Equal(result1, result2);
         }
+
+        [Fact]
+        public void RegisterViewForViewModel_ViewAndViewModel_ViewAndViewModelResolved()
+        {
+            var sut = new ModernDependencyResolver();
+
+            sut.RegisterViewForViewModel<View, RoutableViewModel>();
+
+            var result1 = sut.GetService<RoutableViewModel>();
+            Assert.IsType<RoutableViewModel>(result1);
+
+            var result2 = sut.GetService<IViewFor<RoutableViewModel>>();
+            Assert.IsType<View>(result2);
+        }
     }
 }
 

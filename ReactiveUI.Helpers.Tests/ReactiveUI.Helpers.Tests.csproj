@@ -118,6 +118,7 @@
     <Compile Include="Fakes\RoutableViewModel.cs" />
     <Compile Include="Fakes\RoutableViewModelFactory.cs" />
     <Compile Include="Fakes\Dependency.cs" />
+    <Compile Include="Fakes\View.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoutingStateExtensionsTests.cs" />
     <Compile Include="SplatExtensionsTests.cs" />
